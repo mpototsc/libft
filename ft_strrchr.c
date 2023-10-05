@@ -6,7 +6,7 @@
 /*   By: mpototsc <mpototsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:23:54 by mpototsc          #+#    #+#             */
-/*   Updated: 2023/10/04 14:27:10 by mpototsc         ###   ########.fr       */
+/*   Updated: 2023/10/05 17:16:16 by mpototsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ char	*ft_strrchr(const char *str, int c)
 	i = ft_strlen(str);
 	while (i >= 0)
 	{
-		if (str[i] == c)
+		if (str[i] == (char)c)
 			return ((char *)&str[i]);
 		i--;
 	}
+	if ((char)c == '\0')
+		return ((char *) str + i);
 	return (NULL);
 }

@@ -6,16 +6,15 @@
 /*   By: mpototsc <mpototsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:40:51 by mpototsc          #+#    #+#             */
-/*   Updated: 2023/10/03 17:29:34 by mpototsc         ###   ########.fr       */
+/*   Updated: 2023/10/05 17:12:39 by mpototsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strchr(const char *str, int c)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (str[i])
@@ -24,7 +23,7 @@ char	*ft_strchr(const char *str, int c)
 			return ((char *)str + i);
 		i++;
 	}
-	if (!c && str[i] == '\0')
+	if ((char)c == '\0')
 		return ((char *) str + i);
 	return (NULL);
 }

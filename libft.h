@@ -6,7 +6,7 @@
 /*   By: mpototsc <mpototsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 14:04:22 by mpototsc          #+#    #+#             */
-/*   Updated: 2023/10/04 19:28:02 by mpototsc         ###   ########.fr       */
+/*   Updated: 2023/10/05 14:11:33 by mpototsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-int		ft_tolower(char c);
-int		ft_toupper(char c);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
 #endif

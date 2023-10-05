@@ -6,12 +6,22 @@
 /*   By: mpototsc <mpototsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:58:50 by mpototsc          #+#    #+#             */
-/*   Updated: 2023/10/02 16:51:41 by mpototsc         ###   ########.fr       */
+/*   Updated: 2023/10/05 16:22:03 by mpototsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* int	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+ */
 static int	inset(char c, const char *set)
 {
 	int	i;
@@ -56,6 +66,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	i = firstpos(s1, set);
 	j = lastpos(s1, set);
 	k = 0;
+	if (i > j)
+		return (ft_strdup(""));
 	s2 = malloc(sizeof(char) * ((lastpos(s1, set) - firstpos(s1, set)) + 1));
 	if (s2 == 0)
 		return (NULL);
@@ -65,6 +77,9 @@ char	*ft_strtrim(const char *s1, const char *set)
 		i++;
 		k++;
 	}
+	if (!s2)
+		return (NULL);
+	s2[k] = '\0';
 	return (s2);
 }
 
@@ -73,8 +88,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	char	*str;
 	char	*set;
 
-	set = "+-";
-	str = "++--hello--++";
+	set = "te";
+	str = "telorem ipsum dolor sit amet";
 	printf("%s", ft_strtrim(str, set));
 	return (0);
 } */

@@ -6,7 +6,7 @@
 /*   By: mpototsc <mpototsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:35:27 by mpototsc          #+#    #+#             */
-/*   Updated: 2023/10/02 16:15:46 by mpototsc         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:11:01 by mpototsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*d;
 	char	*s;
 
+	if (dest == NULL && src == NULL)
+		return (dest);
 	i = 0;
 	d = (char *)dest;
 	s = (char *)src;

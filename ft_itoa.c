@@ -6,7 +6,7 @@
 /*   By: mpototsc <mpototsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:22:33 by mpototsc          #+#    #+#             */
-/*   Updated: 2023/10/02 16:18:10 by mpototsc         ###   ########.fr       */
+/*   Updated: 2023/10/05 16:21:55 by mpototsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static size_t	intlen(int n)
 	if (n < 0)
 	{
 		n = -n;
+		i++;
 	}
 	n = n / 10;
 	while (n)
@@ -38,29 +39,28 @@ char	*ft_itoa(int n)
 
 	num = n;
 	len = intlen(n);
-	if (n < 0)
-	{
-		num = -n;
-		len++;
-	}
 	str = (char *)malloc(sizeof(char) * (len +1));
 	if (str == NULL)
 		return (NULL);
-	str[len + 1] = '\0';
-	while (len >= 0)
+	str[len--] = '\0';
+	if (num == 0)
+		str[0] = 48;
+	if (num < 0)
 	{
-		str[len] = num % 10 + 48;
-		num = num / 10;
-		len--;
-	}
-	if (n < 0)
 		str[0] = '-';
+		num *= -1;
+	}
+	while (num > 0)
+	{
+		str[len--] = (num % 10) + 48;
+		num = num / 10;
+	}
 	return (str);
 }
 
 /* int main()
 {
-	long int num = -12345;
+	long int num = 0;
 
 	char *str = ft_itoa(num);
 
@@ -77,5 +77,5 @@ char	*ft_itoa(int n)
 	}
 
 	return 0;
-}
+} 
  */

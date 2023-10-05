@@ -6,7 +6,7 @@
 /*   By: mpototsc <mpototsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:59:27 by mpototsc          #+#    #+#             */
-/*   Updated: 2023/10/02 16:16:41 by mpototsc         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:15:36 by mpototsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	unsigned int	i;
 	char			*str;
 
+	if (!s || start >= ft_strlen(s))
+		len = 0;
 	i = 0;
 	str = (char *)malloc(sizeof(char) * len +1);
 	if (str == NULL)

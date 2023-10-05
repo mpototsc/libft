@@ -6,11 +6,10 @@
 /*   By: mpototsc <mpototsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:45:02 by mpototsc          #+#    #+#             */
-/*   Updated: 2023/10/04 14:20:22 by mpototsc         ###   ########.fr       */
+/*   Updated: 2023/10/05 16:22:18 by mpototsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 int	ft_strlen(const char *str)
