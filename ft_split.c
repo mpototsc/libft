@@ -43,8 +43,8 @@ static void	*freestr(char **str, size_t i)
 	j = 0;
 	while (j < i)
 	{
-		free(str[i]);
-		i++;
+		free(str[j]);
+		j++;
 	}
 	free(str);
 	return (NULL);

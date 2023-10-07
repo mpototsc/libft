@@ -19,8 +19,10 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 
 	if (!s || start >= ft_strlen(s))
 		len = 0;
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
 	i = 0;
-	str = (char *)malloc(sizeof(char) * len +1);
+	str = (char *)malloc(sizeof(char) * len + 1);
 	if (str == NULL)
 		return (NULL);
 	while (i < len)
