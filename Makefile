@@ -6,7 +6,7 @@
 #    By: mpototsc <mpototsc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 14:54:11 by mpototsc          #+#    #+#              #
-#    Updated: 2023/10/05 14:11:56 by mpototsc         ###   ########.fr        #
+#    Updated: 2023/10/07 19:42:46 by mpototsc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@ NAME = libft.a
 
 CC = cc
 
-FLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 
 AR = ar -rc
 
-SOURCE = ft_atoi.c \
+SRC = ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
 		ft_isalnum.c \
@@ -53,15 +53,16 @@ SOURCE = ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c \
 
-OBJS = $(SOURCE:.c=.o)
+%.o :%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+OBJS = ${SRC:.c=.o}
+
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS) libft.h
-
-%o: %.c
-	$(CC)$(FLAGS) -c$<-o$@
 
 clean:
 	rm -f $(OBJS)
